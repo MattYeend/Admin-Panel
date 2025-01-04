@@ -96,16 +96,19 @@ class User extends Authenticatable
         return $this->first_name[0] . ' ' . $this->last_name;
     }
 
+    // Gets created by user
     public function createdBy()
     {
         return $this->belongsTo(User::class, 'created_by');
     }
 
+    // Gets updated by user
     public function updatedBy()
     {
         return $this->belongsTo(User::class, 'updated_by');
     }
 
+    // Gets deleted by user
     public function deletedBy()
     {
         return $this->belongsTo(User::class, 'deleted_by');
