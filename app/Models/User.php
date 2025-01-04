@@ -72,31 +72,42 @@ class User extends Authenticatable
         ];
     }
 
-    public function getShortName(): string{
+    // Gets first name
+    public function getShortName(): string
+    {
         return $this->first_name;
     }
 
-    public function getName(): string{
+    // Gets first and last name
+    public function getName(): string
+    {
         return $this->first_name . ' ' . $this->last_name;
     }
 
-    public function getFullNameLong(): string{
+    // Gets long version of name
+    public function getFullNameLong(): string
+    {
         return $this->title . ' ' . $this->first_name . ($this->middle_name ? ' ' . $this->middle_name : '') . ' ' . $this->last_name;
     }
 
-    public function getFullNameShort(): string{
+    // Gets first character of first name, and last name
+    public function getFullNameShort(): string
+    {
         return $this->first_name[0] . ' ' . $this->last_name;
     }
 
-    public function createdBy(){
+    public function createdBy()
+    {
         return $this->belongsTo(User::class, 'created_by');
     }
 
-    public function updatedBy(){
+    public function updatedBy()
+    {
         return $this->belongsTo(User::class, 'updated_by');
     }
 
-    public function deletedBy(){
+    public function deletedBy()
+    {
         return $this->belongsTo(User::class, 'deleted_by');
     }
 }
