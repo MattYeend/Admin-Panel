@@ -20,3 +20,6 @@ To contribute:
 - Starting with the issue number; e.g. `<number>-short-description-of-branch`, before doing the job. 
 - To commit, ensure that the commit message starts with a hash of the issue number; e.g. `#<number> short description of work done`.
 - Once pushed, create a pull request and include the `Closing` key words and an overview of the work done and what it's meant to do fix or update.
+
+## Sponsor
+Any sponsors with be greatly appreciated, feel free to sponsor [here](https://github.com/MattYeend)
