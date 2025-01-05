@@ -22,4 +22,4 @@ To contribute:
 - Once pushed, create a pull request and include the `Closing` key words and an overview of the work done and what it's meant to do fix or update.
 
 ## Sponsor
-Any sponsors with be greatly appreciated, feel free to sponsor [here](https://github.com/MattYeend)
+Any sponsors with be greatly appreciated, feel free to sponsor [here](https://github.com/sponsors/MattYeend)
