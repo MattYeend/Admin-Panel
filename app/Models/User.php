@@ -113,4 +113,11 @@ class User extends Authenticatable
     {
         return $this->belongsTo(User::class, 'deleted_by');
     }
+
+    public function getProfilePhotoUrlAttribute()
+    {
+        return $this->profile_photo_path
+            ? asset('storage/' . $this->profile_photo_path)
+            : $this->defaultProfilePhotoUrl();
+    }
 }
