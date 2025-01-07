@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f020513050c26f9c4b661d4ec4f76de2",
+    "content-hash": "afa5eed89071cc9942406098974d4822",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2434,6 +2434,61 @@
                 }
             ],
             "time": "2025-01-04T12:08:56+00:00"
+        },
+        {
+            "name": "mattyeend/query-optimizer",
+            "version": "v1.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MatthewYeend/Query-Optimizer.git",
+                "reference": "73133947e1efaff301e046161476f5f6aec93e57"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MatthewYeend/Query-Optimizer/zipball/73133947e1efaff301e046161476f5f6aec93e57",
+                "reference": "73133947e1efaff301e046161476f5f6aec93e57",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^9.0 | ^10.0 | ^11.0",
+                "laravel/framework": "^9.0 | ^10.0 | ^11.0",
+                "php": "^7.4 || ^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MattYeend\\QueryOptimizer\\QueryOptimizerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mattyeend\\QueryOptimizer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Yeend",
+                    "email": "mail@mattyeend.co.uk"
+                }
+            ],
+            "description": "A Laravel package to optimize and analyze database queries.",
+            "support": {
+                "issues": "https://github.com/MatthewYeend/Query-Optimizer/issues",
+                "source": "https://github.com/MatthewYeend/Query-Optimizer/tree/v1.1.6"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/MattYeend",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-01-07T18:01:05+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
