@@ -12,8 +12,7 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.0",
-        "mattyeend/logging": "^1.1",
-        "mattyeend/query-optimizer": "^1.1"
+        "mattyeend/logging": "^1.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
