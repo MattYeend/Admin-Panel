@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "916c0dc40a0dc74abf37d15dea637719",
+    "content-hash": "7a85f2693f229ba04f453b7edce1a153",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2446,6 +2446,69 @@
                 }
             ],
             "time": "2025-01-11T19:24:36+00:00"
+        },
+        {
+            "name": "mattyeend/prevent-destructive-commands",
+            "version": "v1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MatthewYeend/Prevent-Destructive-Commands.git",
+                "reference": "5cbaa12f9325f12fbfc1f02a0fc8ac571e531ef5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MatthewYeend/Prevent-Destructive-Commands/zipball/5cbaa12f9325f12fbfc1f02a0fc8ac571e531ef5",
+                "reference": "5cbaa12f9325f12fbfc1f02a0fc8ac571e531ef5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^9.0 | ^10.0 | ^11.0",
+                "laravel/framework": "^9.0 | ^10.0 | ^11.0",
+                "php": "^7.4 || ^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MattYeend\\PreventDestructiveCommands\\PreventDestructiveCommandsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mattyeend\\PreventDestructiveCommands\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Yeend",
+                    "email": "mail@mattyeend.co.uk"
+                }
+            ],
+            "description": "A Laravel package to stop destructive commands.",
+            "keywords": [
+                "Destructive",
+                "Prevent-Destructive-Commands",
+                "commands",
+                "laravel",
+                "package",
+                "prevent"
+            ],
+            "support": {
+                "issues": "https://github.com/MatthewYeend/Prevent-Destructive-Commands/issues",
+                "source": "https://github.com/MatthewYeend/Prevent-Destructive-Commands/tree/v1.1.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/MattYeend",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-01-13T21:01:16+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
