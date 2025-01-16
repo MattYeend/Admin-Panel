@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a85f2693f229ba04f453b7edce1a153",
+    "content-hash": "a1559401f102082b14af7bf3402a39bf",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2509,6 +2509,70 @@
                 }
             ],
             "time": "2025-01-13T21:01:16+00:00"
+        },
+        {
+            "name": "mattyeend/queue-monitor",
+            "version": "v1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MatthewYeend/QueueMonitor.git",
+                "reference": "e9c608873f6d5ea443b5f739f2db20a7d6c4e2d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MatthewYeend/QueueMonitor/zipball/e9c608873f6d5ea443b5f739f2db20a7d6c4e2d2",
+                "reference": "e9c608873f6d5ea443b5f739f2db20a7d6c4e2d2",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^9.0 | ^10.0 | ^11.0",
+                "laravel/framework": "^9.0 | ^10.0 | ^11.0",
+                "php": "^7.4 || ^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MattYeend\\QueueMonitoring\\QueueMonitoringServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mattyeend\\QueueMonitoring\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Yeend",
+                    "email": "mail@mattyeend.co.uk"
+                }
+            ],
+            "description": "A Laravel package to monitor queue logs.",
+            "keywords": [
+                "Queue-Monitoring",
+                "laravel",
+                "monitor",
+                "monitoring",
+                "package",
+                "queue",
+                "queue-monitor"
+            ],
+            "support": {
+                "issues": "https://github.com/MatthewYeend/QueueMonitor/issues",
+                "source": "https://github.com/MatthewYeend/QueueMonitor/tree/v1.1.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/MattYeend",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-01-16T07:31:19+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
