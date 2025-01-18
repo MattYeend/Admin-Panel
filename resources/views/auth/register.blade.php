@@ -10,8 +10,20 @@
             @csrf
 
             <div>
-                <x-label for="title" value="{{ __('Title') }}" />
-                <x-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title')" required autofocus autocomplete="title" />
+                <x-label for="title" :value="__('Title')" />
+                <select id="title" name="title" autocomplete="title" required 
+                    class="block mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                    <option value="" disabled selected>{{ __('Select a title') }}</option>
+                    <option value="Mr.">{{ __('Mr.') }}</option>
+                    <option value="Ms.">{{ __('Ms.') }}</option>
+                    <option value="Dr.">{{ __('Dr.') }}</option>
+                    <option value="Prof.">{{ __('Prof.') }}</option>
+                </select>
+                @error('title')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
+            </div>
+
             </div>
 
             <div class="mt-4">
