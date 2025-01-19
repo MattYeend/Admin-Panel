@@ -16,6 +16,8 @@
                     <option value="" disabled selected>{{ __('Select a title') }}</option>
                     <option value="Mr.">{{ __('Mr.') }}</option>
                     <option value="Ms.">{{ __('Ms.') }}</option>
+                    <option value="Mrs.">{{ __('Mrs.') }}</option>
+                    <option value="Ms.">{{ __('Ms.') }}</option>
                     <option value="Dr.">{{ __('Dr.') }}</option>
                     <option value="Prof.">{{ __('Prof.') }}</option>
                 </select>
