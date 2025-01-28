@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1559401f102082b14af7bf3402a39bf",
+    "content-hash": "f3b99fc7e97ef515d056532c41c3846b",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2380,6 +2380,71 @@
                 }
             ],
             "time": "2024-12-23T15:05:02+00:00"
+        },
+        {
+            "name": "mattyeend/currency-exchange",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MatthewYeend/Currency-Exchange.git",
+                "reference": "95965c803a9e6aa9495d3b33a7864b9c9ca1b14b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MatthewYeend/Currency-Exchange/zipball/95965c803a9e6aa9495d3b33a7864b9c9ca1b14b",
+                "reference": "95965c803a9e6aa9495d3b33a7864b9c9ca1b14b",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MattYeend\\CurrencyExchange\\CurrencyExchangeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MattYeend\\CurrencyExchange\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Yeend",
+                    "email": "mail@mattyeend.co.uk"
+                }
+            ],
+            "description": "A Laravel package for currency exchange rates",
+            "keywords": [
+                "Destructive",
+                "Prevent-Destructive-Commands",
+                "commands",
+                "laravel",
+                "package",
+                "prevent"
+            ],
+            "support": {
+                "issues": "https://github.com/MatthewYeend/Currency-Exchange/issues",
+                "source": "https://github.com/MatthewYeend/Currency-Exchange/tree/v1.1.1"
+            },
+            "funding": [
+                {
+                    "url": "https://www.buymeacoffee.com/mattyeend",
+                    "type": "buy_me_a_coffee"
+                },
+                {
+                    "url": "https://github.com/MattYeend",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-01-28T17:24:01+00:00"
         },
         {
             "name": "mattyeend/logging",

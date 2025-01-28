@@ -13,6 +13,7 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.0",
+        "mattyeend/currency-exchange": "^1.1",
         "mattyeend/logging": "^1.1",
         "mattyeend/prevent-destructive-commands": "^1.1",
         "mattyeend/queue-monitor": "^1.1"
