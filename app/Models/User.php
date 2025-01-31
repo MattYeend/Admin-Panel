@@ -36,6 +36,7 @@ class User extends Authenticatable
         'password',
         'current_team_id',
         'profile_photo_path',
+        'role',
     ];
 
     /**
@@ -119,5 +120,15 @@ class User extends Authenticatable
         return $this->profile_photo_path
             ? asset('storage/' . $this->profile_photo_path)
             : $this->defaultProfilePhotoUrl();
+    }
+
+    public function isAdmin()
+    {
+        return $this->role === config('roles.admin');
+    }
+
+    public function isEditor()
+    {
+        return $this->role === config('roles.editor');
     }
 }
