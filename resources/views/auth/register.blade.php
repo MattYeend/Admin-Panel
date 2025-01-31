@@ -26,8 +26,6 @@
                 @enderror
             </div>
 
-            </div>
-
             <div class="mt-4">
                 <x-label for="first_name" value="{{ __('First Name') }}" />
                 <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="first_name" />
