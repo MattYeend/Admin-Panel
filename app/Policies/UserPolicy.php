@@ -12,7 +12,7 @@ class UserPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->isAdmin() || $user->isSuperAdmin();
+        return $user->isAdmin() || $user->isEditor();
     }
 
     /**
@@ -20,7 +20,7 @@ class UserPolicy
      */
     public function view(User $authUser, User $user): bool
     {
-        return $authUser->isSuperAdmin() || $authUser->isAdmin() || $authUser->cSuite() ||
+        return $authUser->isEditor()() || $authUser->isAdmin() || 
                 ($authUser->department && $authUser->department->dept_lead_id === $user->id);
     }
 
@@ -29,7 +29,7 @@ class UserPolicy
      */
     public function create(User $user): bool
     {
-        return $user->isAdmin() || $user->isSuperAdmin();
+        return $user->isAdmin() || $user->isEditor();
     }
 
     /**
@@ -37,7 +37,7 @@ class UserPolicy
      */
     public function update(User $authUser, User $user): bool
     {
-        return $authUser->isAdmin() || $authUser->isSuperAdmin() ||
+        return $authUser->isAdmin() || $authUser->isEditor() ||
                 ($authUser->department && $authUser->department->dept_lead_id === $user->id);
     }
 
@@ -46,7 +46,7 @@ class UserPolicy
      */
     public function delete(User $authUser, User $user): bool
     {
-        return $authUser->isSuperAdmin();
+        return $authUser->isEditor();
     }
 
     /**
@@ -63,12 +63,5 @@ class UserPolicy
     public function forceDelete(User $user, User $model): bool
     {
         //
-    }
-
-    public function viewSensitiveDocs(User $authUser, User $user)
-    {
-        $isAdminOrLead = $authUser->id === $user->department->dept_lead_id;
-        $allowed = $authUser->isSuperAdmin() || $authUser->isAdmin() || $authUser->cSuite();
-        return $isAdminOrLead || $allowed;
     }
 }
