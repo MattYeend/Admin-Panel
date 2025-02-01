@@ -33,16 +33,23 @@
                                 <td class="py-2 px-4 border-r">{{ $user->email }}</td>
                                 <td class="py-2 px-4 border-r">{{ ucfirst($user->role) }}</td>
                                 <td class="py-2 px-4 flex space-x-2">
-                                    <a href="{{ route('admin.users.edit', $user) }}" class="px-3 py-1 bg-yellow-500 text-white rounded">
-                                        {{ __('Edit') }}
-                                    </a>
-                                    <form action="{{ route('admin.users.destroy', $user) }}" method="POST" onsubmit="return confirm('{{ __('Are you sure?') }}');">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="px-3 py-1 bg-red-500 text-white rounded">
-                                            {{ __('Delete') }}
-                                        </button>
-                                    </form>
+                                    @can('update', $user)
+                                        <a href="{{ route('admin.users.edit', $user) }}" class="px-3 py-1 bg-yellow-500 text-white rounded">
+                                            {{ __('Edit') }}
+                                        </a>
+                                    @endcan
+
+                                    @can('delete', $user)
+                                        @if (auth()->user()->id !== $user->id) 
+                                            <form action="{{ route('admin.users.destroy', $user) }}" method="POST" onsubmit="return confirm('{{ __('Are you sure?') }}');">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="px-3 py-1 bg-red-500 text-white rounded">
+                                                    {{ __('Delete') }}
+                                                </button>
+                                            </form>
+                                        @endif
+                                    @endcan
                                 </td>
                             </tr>
                         @endforeach
