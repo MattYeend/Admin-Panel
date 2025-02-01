@@ -22,4 +22,11 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
     }
+
+    /**
+     * Registration of Policies.
+     */
+    protected $policies = [
+        User::class => UserPolicy::class,
+    ];
 }
