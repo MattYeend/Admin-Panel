@@ -20,7 +20,7 @@ class UserPolicy
      */
     public function view(User $authUser, User $user): bool
     {
-        return $authUser->isEditor()() || $authUser->isAdmin() || 
+        return $authUser->isEditor() || $authUser->isAdmin() || 
                 ($authUser->department && $authUser->department->dept_lead_id === $user->id);
     }
 
@@ -37,7 +37,7 @@ class UserPolicy
      */
     public function update(User $authUser, User $user): bool
     {
-        return $authUser->isAdmin() || $authUser->isEditor() ||
+        return $authUser->isAdmin() || $authUser->isEditor() || 
                 ($authUser->department && $authUser->department->dept_lead_id === $user->id);
     }
 
@@ -46,22 +46,11 @@ class UserPolicy
      */
     public function delete(User $authUser, User $user): bool
     {
-        return $authUser->isEditor();
-    }
+        // Prevent users from deleting their own account
+        if ($authUser->id === $user->id) {
+            return false;
+        }
 
-    /**
-     * Determine whether the user can restore the model.
-     */
-    public function restore(User $user, User $model): bool
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can permanently delete the model.
-     */
-    public function forceDelete(User $user, User $model): bool
-    {
-        //
+        return $authUser->isAdmin(); // Allow only admins to delete users (not editors)
     }
 }
