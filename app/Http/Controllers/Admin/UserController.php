@@ -63,15 +63,23 @@ class UserController extends Controller
         $validatedData = $request->validated() + [
             'created_by' => Auth::user()->id,
         ];
-        
-        $user = new User($validatedData);
-        $user->password = bcrypt($request->password);
 
-        $id = $user->id;
-        Log::log(Log::ACTION_CREATE_USER, ['user' => $user], null, $id);
-        $user->save();
-
-        return redirect()->route('admin.user.index')->with('success', __('users.created_success'));
+        try {
+            $user = new User($validatedData);
+            $user->password = bcrypt($request->password);
+    
+            // Save the user
+            $user->save();
+    
+            $id = $user->id;
+            Log::log(Log::ACTION_CREATE_USER, ['user' => $user], null, $id);
+    
+            return redirect()->route('admin.users.index')->with('success', __('users.created_success'));
+        } catch (\Exception $e) {
+            // Log any exceptions
+            \Log::error('User creation failed:', ['error' => $e->getMessage()]);
+            return back()->withErrors(['error' => 'User creation failed: ' . $e->getMessage()]);
+        }
     }
 
     /**
@@ -108,7 +116,7 @@ class UserController extends Controller
         $user->save();
         $id = $user->id;
         Log::log(Log::ACTION_UPDATE_USER, ['user' => $user], null, $id);
-        return redirect()->route('admin.user.index')->with('success', __('users.updated_success'));
+        return redirect()->route('admin.users.index')->with('success', __('users.updated_success'));
     }
 
     /**
