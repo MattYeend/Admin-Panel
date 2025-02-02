@@ -108,7 +108,7 @@ class UserController extends Controller
         $user->save();
         $id = $user->id;
         Log::log(Log::ACTION_UPDATE_USER, ['user' => $user], null, $id);
-        return redirect()->route('user.index')->with('success', __('users.updated_success'));
+        return redirect()->route('admin.user.index')->with('success', __('users.updated_success'));
     }
 
     /**
@@ -120,6 +120,6 @@ class UserController extends Controller
         $user->delete();
         $id = $user->id;
         Log::log(Log::ACTION_DELETE_USER, ['user' => $user], null, $id);
-        return redirect()->route('users.index')->with('success', __('users.deleted_success'));
+        return redirect()->route('admin.users.index')->with('success', __('users.deleted_success'));
     }
 }
