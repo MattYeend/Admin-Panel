@@ -28,10 +28,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        // Admins and super admins to view all
+        // Admins and editors to view all
         $this->authorize('viewAny', User::class);
 
-        $users = User::get();
+        $sortedUsers = User::orderBy('created_at', 'desc')->get();
 
         $currentPage = request('page', 1);
         $perPage = 10;
