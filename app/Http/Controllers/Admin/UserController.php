@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\Logger;
+use App\Models\Log;
 use App\Mail\WelcomeNewUserMail;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
@@ -68,10 +68,10 @@ class UserController extends Controller
         $user->password = bcrypt($request->password);
 
         $id = $user->id;
-        Logger::log(Logger::ACTION_CREATE_USER, ['user' => $user], null, $id);
+        Log::log(Log::ACTION_CREATE_USER, ['user' => $user], null, $id);
         $user->save();
 
-        return redirect()->route('user.index')->with('success', __('users.created_success'));
+        return redirect()->route('admin.user.index')->with('success', __('users.created_success'));
     }
 
     /**
@@ -107,7 +107,7 @@ class UserController extends Controller
 
         $user->save();
         $id = $user->id;
-        Logger::log(Logger::ACTION_UPDATE_USER, ['user' => $user], null, $id);
+        Log::log(Log::ACTION_UPDATE_USER, ['user' => $user], null, $id);
         return redirect()->route('user.index')->with('success', __('users.updated_success'));
     }
 
@@ -119,7 +119,7 @@ class UserController extends Controller
         $this->authorize('delete', $user);
         $user->delete();
         $id = $user->id;
-        Logger::log(Logger::ACTION_DELETE_USER, ['user' => $user], null, $id);
+        Log::log(Log::ACTION_DELETE_USER, ['user' => $user], null, $id);
         return redirect()->route('users.index')->with('success', __('users.deleted_success'));
     }
 }
