@@ -89,7 +89,7 @@ class UserController extends Controller
     {
         $this->authorize('update', $user);
 
-        return view('admin.users.update', compact('user'));
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
