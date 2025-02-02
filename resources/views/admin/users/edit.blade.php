@@ -16,13 +16,13 @@
                         <x-label for="title" :value="__('Title')" />
                         <select id="title" name="title" autocomplete="title" required 
                             class="block mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                            <option value="" disabled selected>{{ __('Select a title') }}</option>
-                            <option value="Mr.">{{ __('Mr.') }}</option>
-                            <option value="Ms.">{{ __('Ms.') }}</option>
-                            <option value="Mrs.">{{ __('Mrs.') }}</option>
-                            <option value="Miss.">{{ __('Miss.') }}</option>
-                            <option value="Dr.">{{ __('Dr.') }}</option>
-                            <option value="Prof.">{{ __('Prof.') }}</option>
+                            <option value="" disabled {{ old('title') ? '' : 'selected' }}>{{ __('Select a title') }}</option>
+                            <option value="Mr." {{ old('title', $user->title ?? '') == 'Mr.' ? 'selected' : '' }}>{{ __('Mr.') }}</option>
+                            <option value="Ms." {{ old('title', $user->title ?? '') == 'Ms.' ? 'selected' : '' }}>{{ __('Ms.') }}</option>
+                            <option value="Mrs." {{ old('title', $user->title ?? '') == 'Mrs.' ? 'selected' : '' }}>{{ __('Mrs.') }}</option>
+                            <option value="Miss." {{ old('title', $user->title ?? '') == 'Miss.' ? 'selected' : '' }}>{{ __('Miss.') }}</option>
+                            <option value="Dr." {{ old('title', $user->title ?? '') == 'Dr.' ? 'selected' : '' }}>{{ __('Dr.') }}</option>
+                            <option value="Prof." {{ old('title', $user->title ?? '') == 'Prof.' ? 'selected' : '' }}>{{ __('Prof.') }}</option>
                         </select>
                         @error('title')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -31,13 +31,20 @@
 
                     <div class="mt-4">
                         <x-label for="first_name" value="{{ __('First Name') }}" />
-                        <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="first_name" />
+                        <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name', $user->first_name ?? '')" required autofocus autocomplete="first_name" />
+                        @error('first_name')
+                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <div class="mt-4">
                         <x-label for="last_name" value="{{ __('Last Name') }}" />
-                        <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required autofocus autocomplete="last_name" />
+                        <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name', $user->last_name ?? '')" required autofocus autocomplete="last_name" />
+                        @error('last_name')
+                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                        @enderror
                     </div>
+
 
                     <div class="mb-4">
                         <x-label for="email" :value="__('Email')" />
