@@ -18,7 +18,6 @@
                 <table class="min-w-full bg-white border border-gray-300">
                     <thead>
                         <tr class="w-full bg-gray-100 border-b">
-                            <th class="py-2 px-4 border-r">#</th>
                             <th class="py-2 px-4 border-r">{{ __('Title') }}</th>                            
                             <th class="py-2 px-4 border-r">{{ __('Name') }}</th>
                             <th class="py-2 px-4 border-r">{{ __('Email') }}</th>
@@ -29,7 +28,6 @@
                     <tbody>
                         @foreach ($users as $user)
                             <tr class="border-b">
-                                <td class="py-2 px-4 border-r">{{ $loop->iteration }}</td>
                                 <td class="py-2 px-4 border-r">{{ $user->title }}</td>
                                 <td class="py-2 px-4 border-r">{{ $user->getName() }}</td>
                                 <td class="py-2 px-4 border-r">{{ $user->email }}</td>
