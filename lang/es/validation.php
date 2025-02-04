@@ -62,7 +62,7 @@ return [
         'numeric' => 'El campo :attribute debe ser mayor que :value.',
         'string' => 'El campo :attribute debe tener más de :value caracteres.',
     ],
-'gte' => [
+    'gte' => [
         'array' => 'El campo :attribute debe tener :value elementos o más.',
         'file' => 'El campo :attribute debe ser mayor o igual a :value kilobytes.',
         'numeric' => 'El campo :attribute debe ser mayor o igual a :value.',
@@ -117,7 +117,7 @@ return [
     'not_in' => 'El :attribute seleccionado no es válido.',
     'not_regex' => 'El formato del campo :attribute no es válido.',
     'numeric' => 'El campo :attribute debe ser un número.',
-'password' => [
+    'password' => [
         'letters' => 'El campo :attribute debe contener al menos una letra.',
         'mixed' => 'El campo :attribute debe contener al menos una letra mayúscula y una minúscula.',
         'numbers' => 'El campo :attribute debe contener al menos un número.',
