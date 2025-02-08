@@ -70,6 +70,26 @@
                         </select>
                     </div>
 
+                    <div class="mb-4">
+                        <x-label for="phone_number" :value="__('Phone Number')" />
+                        <x-input id="phone_number" class="block mt-1 w-full" type="text" name="phone_number" :value="old('phone_number', $user->phone_number ?? '')" />
+                        @error('phone_number')
+                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <!-- Show general errors -->
+                    @if ($errors->any())
+                        <div class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-md">
+                            <strong>{{ __('Please fix the following errors:') }}</strong>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>- {{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <div class="flex items-center justify-end mt-4">
                         <x-button class="ml-4">
                             {{ __('Update User') }}
