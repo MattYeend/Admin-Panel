@@ -16,5 +16,5 @@ return [
     'updated_success' => 'Utilisateur mis à jour avec succès',
     'deleted_success' => 'Utilisateur supprimé avec succès',
     'actions' => 'Actions',
-    'confirm_delete' => 'Êtes-vous sûr ?',
+    'confirm_delete' => 'Êtes-vous sûr?',
 ];
