@@ -32,6 +32,7 @@ class UpdateUserRequest extends FormRequest
             'email' => 'required|string|email|max:255|unique:users,email,' . $userId,
             'password' => 'nullable|string|min:8|confirmed',
             'role' => 'required|in:admin,editor,user',
+            'phone_number' => 'required|string|max:15|regex:/^[0-9+\-\s]+$/',
         ];
     }
 }
