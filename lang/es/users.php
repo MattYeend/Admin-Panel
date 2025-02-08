@@ -9,6 +9,7 @@ return [
     'password' => 'Contraseña',
     'confirm_password' => 'Confirmar Contraseña',
     'role' => 'Rol',
+    'phone_number' => 'Número de Teléfono',
     'create_user' => 'Crear Usuario',
     'update_user' => 'Actualizar Usuario',
     'delete_user' => 'Eliminar Usuario',

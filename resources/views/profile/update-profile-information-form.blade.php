@@ -91,6 +91,13 @@
                 @endif
             @endif
         </div>
+
+        <!-- Phone Number -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="phone_number" value="{{ __('Phone Number') }}" />
+            <x-input id="phone_number" type="text" class="mt-1 block w-full" wire:model="state.phone_number" autocomplete="phone" />
+            <x-input-error for="phone_number" class="mt-2" />
+        </div>
     </x-slot>
 
     <x-slot name="actions">

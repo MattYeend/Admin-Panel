@@ -9,6 +9,7 @@ return [
     'password' => 'Password',
     'confirm_password' => 'Confirm Password',
     'role' => 'Role',
+    'phone_number' => 'Phone Number',
     'create_user' => 'Create User',
     'update_user' => 'Update User',
     'delete_user' => 'Delete User',
