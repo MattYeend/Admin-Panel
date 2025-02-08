@@ -21,6 +21,7 @@
                             <th class="py-2 px-4 border-r">{{ __('Title') }}</th>                            
                             <th class="py-2 px-4 border-r">{{ __('Name') }}</th>
                             <th class="py-2 px-4 border-r">{{ __('Email') }}</th>
+                            <th class="py-2 px-4 border-r">{{ __('Phone Number') }}</th>
                             <th class="py-2 px-4 border-r">{{ __('Role') }}</th>
                             <th class="py-2 px-4">{{ __('Actions') }}</th>
                         </tr>
@@ -31,6 +32,7 @@
                                 <td class="py-2 px-4 border-r">{{ $user->title }}</td>
                                 <td class="py-2 px-4 border-r">{{ $user->getName() }}</td>
                                 <td class="py-2 px-4 border-r">{{ $user->email }}</td>
+                                <td class="py-2 px-4 border-r">{{ $user->phone_number }}</td>
                                 <td class="py-2 px-4 border-r">{{ ucfirst($user->role) }}</td>
                                 <td class="py-2 px-4 flex space-x-2">
                                     @can('update', $user)
